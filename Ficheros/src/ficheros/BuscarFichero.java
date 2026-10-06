@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BuscarFichero {
 
-	private static boolean encontrado = false;
+	private static boolean encontrado = true;
 	
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);

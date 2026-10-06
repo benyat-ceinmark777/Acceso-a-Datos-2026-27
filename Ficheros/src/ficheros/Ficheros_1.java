@@ -3,7 +3,7 @@ package ficheros;
 import java.io.File;
 import java.util.Scanner;
 
-public class Ficheros1 {
+public class Ficheros_1 {
 
 	public static void main(String[] args) {
 
