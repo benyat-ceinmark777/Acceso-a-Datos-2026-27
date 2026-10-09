@@ -11,12 +11,13 @@ public class Ejercicio_5 {
 	public static void main(String[] args) {
 
 		// Creamos el directorio
-		File carpeta = new File("./temp_dir");
+		File carpeta = new File("./Desktop/carpeta_PRUEBA");
 		
 		// Si no existe, lo creamos
 		if (!carpeta.exists()) {
-			carpeta.mkdir();
+			carpeta.mkdirs();
 			System.out.println("Carpeta creada con exito.");
+			System.out.println(carpeta.getAbsolutePath());
 		}
 		
 		// Creamos los objetos File de los 3 archivos
