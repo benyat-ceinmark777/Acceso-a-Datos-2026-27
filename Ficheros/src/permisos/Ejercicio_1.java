@@ -17,19 +17,22 @@ public class Ejercicio_1 {
 
 			// 2. Modificar permisos:
 			boolean okLectura = archivo.setReadable(true); // lo hacemos leible
-			boolean escrituraCambiada = archivo.setWritable(false);
+			boolean escrituraCambiada = archivo.setWritable(true);
 //			boolean noEscritura = archivo.setWritable(false); // no se puede escribir
 			boolean noEjecucion = archivo.setExecutable(false); // no se ejecuta
 
 			// validar especificamente la escritura
 			if (escrituraCambiada && !archivo.canWrite()) {
 				System.out.println("Exito, el archivo txt es de solo lectura");
-			} else {
+			} else if (archivo.canWrite()){
+				System.out.println("Se ha modificado los permisos y ya no es de SOLO LECTURA");
+			}else {
 				System.out.println("No se pudo modificar el permiso de escritura");
 			}
 			System.out.println("Comprobacion: ");
 			System.out.println("Se puede leer: " + archivo.canRead());
 			System.out.println("Se puede escribir: " + archivo.canWrite());
+			
 			// 3. Confirmación
 //			if(okLectura && noEscritura && noEjecucion) {
 //				System.out.println("Los permisos se han actualizado correctamente: ");
