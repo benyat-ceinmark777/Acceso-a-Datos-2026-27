@@ -1,7 +1,7 @@
 package inputOutput;
 
 public class Ejercicio_1 {
-public static void main(String[] args) {
-	
-}
+	public static void main(String[] args) {
+
+	}
 }
