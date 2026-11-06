@@ -32,8 +32,27 @@ public class Ejercicio1 {
         logFile.setWritable(true, true);   // Escritura solo propietario
 		
 		// 4. FilenameFilter para listar solo archivos.log
-        
+        FilenameFilter filtroLog = new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String name) {
+				return name.endsWith(".log");
+			}
+		};
 		
-		
+		// 5. Listar e imprimir información de los ficheros filtrados (los ".log")
+		File[] archivosLog = directorio.listFiles(filtroLog);
+		System.out.println("ARCHIVOS .log encontrados");
+		if(archivosLog != null) {
+			for (File f : archivosLog) {
+				try {
+					System.out.println("Nombre: " + f.getName());
+					System.out.println("Ruta canónica: " + f.getCanonicalPath());
+					System.out.println("Tamaño: " + f.length() + " bytes");
+				} catch (IOException e) {
+					System.err.println("Error obteniendo ruta: " + e.getMessage());
+				}
+			}
+		}
 	}
 }
